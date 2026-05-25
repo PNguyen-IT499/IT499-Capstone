@@ -1,10 +1,10 @@
 {
-  "name": "CodingPhase",
-  "short_name": "CodingPhase",
+  "name": "Gourmet Haven",
+  "short_name": "Gourmet Haven",
   "background_color": "#ad38f1",
   "theme_color": "#ad38f1",
   "start_url": "/",
-  "description": "A platform to learn how to code",
+  "description": "Bespoke Michelin-starred dining experience at Gourmet Haven",
   "orientation": "any",
   "display": "standalone",
   "icons": [
