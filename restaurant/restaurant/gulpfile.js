@@ -201,9 +201,9 @@ gulp.task('fix-paths-for-gh-pages', cb => {
 	const files = walkSync('./public').filter(f => f.endsWith('.html'));
 	files.forEach(filePath => {
 		let content = fs.readFileSync(filePath, 'utf8');
-		// Replace href and src paths starting with / but not /IT499-Capstone/ and preserve quotes
-		content = content.replace(/href=(["'])\/(?!IT499-Capstone\/)([^"']*)\1/g, 'href="/IT499-Capstone/$2"');
-		content = content.replace(/src=(["'])\/(?!IT499-Capstone\/)([^"']*)\1/g, 'src="/IT499-Capstone/$2"');
+		// Bulletproof prefixing of all internal href/src attributes (both relative and absolute)
+		content = content.replace(/href=(["'])(?!\/\/|https?:\/\/|#|mailto:)(?:IT499-Capstone\/)?\/?([^"']*)\1/g, 'href="/IT499-Capstone/$2"');
+		content = content.replace(/src=(["'])(?!\/\/|https?:\/\/|#)(?:IT499-Capstone\/)?\/?([^"']*)\1/g, 'src="/IT499-Capstone/$2"');
 		fs.writeFileSync(filePath, content, 'utf8');
 	});
 	cb();
