@@ -1,0 +1,126 @@
+@import "variables";
+
+.cookie-banner {
+  position: fixed;
+  bottom: 30px;
+  left: 30px;
+  max-width: 420px;
+  background: rgba(26, 26, 27, 0.85); // elegant dark glassmorphism
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1.5px solid rgba($secondary, 0.35); // gold border
+  border-radius: 12px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.35);
+  padding: 24px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  transform: translateY(120%) scale(0.95);
+  opacity: 0;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.6s ease;
+  pointer-events: none;
+
+  &.active {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  .cookie-content {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+  }
+
+  .cookie-icon {
+    font-size: 1.8rem;
+    color: $secondary;
+    background: rgba($secondary, 0.1);
+    border: 1px dashed rgba($secondary, 0.4);
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .cookie-text {
+    h4 {
+      font-family: $font-header;
+      font-size: 1.1rem;
+      color: $secondary;
+      margin-bottom: 6px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+
+    p {
+      font-size: 0.85rem;
+      line-height: 1.5;
+      color: rgba(255, 255, 255, 0.85);
+      font-weight: 300;
+      margin: 0;
+    }
+  }
+
+  .cookie-actions {
+    display: flex;
+    gap: 12px;
+    justify-content: flex-end;
+    width: 100%;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 16px;
+
+    button {
+      padding: 10px 22px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-family: $font-body;
+    }
+
+    .btn-cookie-decline {
+      background: transparent;
+      border: 1.5px solid rgba(255, 255, 255, 0.3);
+      color: rgba(255, 255, 255, 0.7);
+
+      &:hover {
+        border-color: rgba(255, 255, 255, 0.7);
+        color: #fff;
+        background: rgba(255, 255, 255, 0.05);
+      }
+    }
+
+    .btn-cookie-accept {
+      background: $secondary;
+      border: 1.5px solid $secondary;
+      color: $primary;
+
+      &:hover {
+        background: darken($secondary, 10%);
+        border-color: darken($secondary, 10%);
+        transform: translateY(-1px);
+        box-shadow: 0 4px 12px rgba($secondary, 0.25);
+      }
+    }
+  }
+
+  @media (max-width: 576px) {
+    left: 15px;
+    right: 15px;
+    bottom: 20px;
+    max-width: calc(100% - 30px);
+    padding: 20px;
+
+    .cookie-icon {
+      display: none;
+    }
+  }
+}
