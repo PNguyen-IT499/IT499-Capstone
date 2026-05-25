@@ -184,6 +184,31 @@ gulp.task(
 	})
 );
 
+// Fix paths for GitHub Pages subfolder
+const fs = require('fs');
+const path = require('path');
+
+function walkSync(dir, filelist = []) {
+	fs.readdirSync(dir).forEach(file => {
+		filelist = fs.statSync(path.join(dir, file)).isDirectory()
+			? walkSync(path.join(dir, file), filelist)
+			: filelist.concat(path.join(dir, file));
+	});
+	return filelist;
+}
+
+gulp.task('fix-paths-for-gh-pages', cb => {
+	const files = walkSync('./public').filter(f => f.endsWith('.html'));
+	files.forEach(filePath => {
+		let content = fs.readFileSync(filePath, 'utf8');
+		// Replace href and src paths starting with / but not /IT499-Capstone/
+		content = content.replace(/href=["']\/(?!IT499-Capstone\/)([^"']*)["']/g, 'href="/IT499-Capstone/$1');
+		content = content.replace(/src=["']\/(?!IT499-Capstone\/)([^"']*)["']/g, 'src="/IT499-Capstone/$1');
+		fs.writeFileSync(filePath, content, 'utf8');
+	});
+	cb();
+});
+
 // Tasks to generate site on development this will also have live reload
 gulp.task(
 	'static-dev',
@@ -209,6 +234,7 @@ gulp.task(
 	'static-build',
 	gulp.series([
 		gulp.series(['views', 'cleanTemp']),
-		gulp.parallel(['styles', 'webpack:prod'])
+		gulp.parallel(['styles', 'webpack:prod']),
+		'fix-paths-for-gh-pages'
 	])
 );
