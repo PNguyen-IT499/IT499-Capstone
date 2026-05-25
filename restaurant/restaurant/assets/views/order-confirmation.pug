@@ -1,0 +1,64 @@
+extends layouts/app.pug
+
+block seo
+  title Order Confirmation | Gourmet Haven
+
+block content
+  .breadcrumbs
+    .container
+      a(href="/") Home
+      span Order Confirmation
+
+  .page-hero
+    .container
+      h1 Order Confirmed
+      p Thank you for dining with us. Your culinary experience is being crafted by Chef Lucien Hale.
+
+  section.order-status-page
+    .container
+      .search-order
+        input#orderIdInput(type="text" placeholder="Lookup Receipt Number (e.g. GH-12345)")
+        button#trackBtn Retrieve Receipt
+      
+      .status-display#statusDisplay
+        .status-header
+          h2 Order #GH-58291
+          span.status-badge In Preparation
+        
+        .status-timeline
+          .step.completed
+            .icon: i.fas.fa-check
+            .label Confirmed
+          .step.active
+            .icon: i.fas.fa-utensils
+            .label Preparing
+          .step
+            .icon: i.fas.fa-road
+            .label Ready / In Transit
+          .step
+            .icon: i.fas.fa-home
+            .label Enjoy Meal
+        
+        .order-details
+          h3 Receipt Summary
+          ul#orderItemsList
+            li 1x L'Éclat de Turbot Rôti
+            li 1x Wagyu Beef Steak
+          
+          .order-fulfillment-summary
+            .summary-item
+              strong Fulfillment Method:
+              span Curbside Pickup
+            .summary-item
+              strong Pickup Window:
+              span ASAP (25 - 35 Mins)
+            .summary-item
+              strong Vehicle Description:
+              span Black Toyota RAV4
+          
+          .order-total
+            strong Est. Ready Time:
+            span.est-time 25 - 35 Mins
+          .order-total
+            strong Total Paid:
+            span.total-price $122.04

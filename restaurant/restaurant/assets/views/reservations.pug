@@ -1,0 +1,30 @@
+extends layouts/app.pug
+
+block seo
+  title Book a Table | Gourmet Haven
+
+block content
+  .breadcrumbs
+    .container
+      a(href="/") Home
+      span Book a Table
+
+  .page-hero
+    .container
+      h1 Book a Table
+      p Join us for an unforgettable culinary experience
+
+  section.reservation-section
+    .container
+      .reservation-container
+        form.reservation-form
+          .form-group
+            label Date
+            input(type="date" required)
+          .form-group
+            label Time
+            input(type="time" required)
+          .form-group
+            label Number of Guests
+            input(type="number" min="1" max="10" placeholder="Number of guests" required)
+          button.book-btn(type="submit") Book Now

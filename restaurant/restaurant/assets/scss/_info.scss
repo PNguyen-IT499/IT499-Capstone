@@ -1,0 +1,143 @@
+@import "variables";
+
+/* FAQ Layout */
+.faq-section {
+  padding: 20px 0 80px;
+
+  .faq-category {
+    margin-bottom: 50px;
+
+    h2 {
+      font-family: $font-header;
+      font-size: 1.8rem;
+      color: $primary;
+      border-bottom: 2px solid $secondary;
+      padding-bottom: 12px;
+      margin-bottom: 25px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+  }
+
+  .faq-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .faq-item {
+    background-color: $white;
+    border-radius: 8px;
+    padding: 25px 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+    border: 1px solid rgba(0, 0, 0, 0.04);
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+      border-color: rgba($secondary, 0.3);
+    }
+
+    h3 {
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: $primary;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+
+      &::before {
+        content: '?';
+        display: inline-flex;
+        width: 24px;
+        height: 24px;
+        background-color: rgba($secondary, 0.15);
+        color: $secondary;
+        border-radius: 50%;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.85rem;
+        font-weight: 700;
+      }
+    }
+
+    p {
+      font-size: 0.98rem;
+      line-height: 1.6;
+      color: $text;
+      margin: 0;
+      font-weight: 300;
+    }
+  }
+}
+
+/* Privacy Policy Layout */
+.privacy-section {
+  padding: 20px 0 80px;
+
+  .privacy-content {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: $white;
+    padding: 50px 60px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+    border: 1px solid rgba(0, 0, 0, 0.02);
+
+    @media (max-width: 600px) {
+      padding: 30px;
+    }
+
+    .last-updated {
+      font-size: 0.9rem;
+      color: #888;
+      margin-bottom: 30px;
+      font-style: italic;
+    }
+
+    .policy-block {
+      margin-bottom: 40px;
+
+      h2 {
+        font-family: $font-header;
+        font-size: 1.5rem;
+        color: $primary;
+        margin-bottom: 18px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        &::after {
+          content: '';
+          flex: 1;
+          height: 1px;
+          background-color: #E2E8F0;
+        }
+      }
+
+      p {
+        font-size: 1rem;
+        line-height: 1.7;
+        color: $text;
+        margin-bottom: 15px;
+        font-weight: 300;
+      }
+
+      ul {
+        margin-bottom: 20px;
+        padding-left: 20px;
+        list-style-type: disc;
+
+        li {
+          font-size: 0.98rem;
+          line-height: 1.6;
+          color: $text;
+          margin-bottom: 8px;
+          font-weight: 300;
+        }
+      }
+    }
+  }
+}

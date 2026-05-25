@@ -1,0 +1,53 @@
+extends layouts/app.pug
+
+block seo
+  title FAQ | Gourmet Haven
+
+block content
+  .breadcrumbs
+    .container
+      a(href="/") Home
+      span FAQ
+
+  .page-hero
+    .container
+      h1 Frequently Asked Questions
+      p Quick answers to help you enjoy your dining and ordering experience
+
+  section.faq-section
+    .container
+      .faq-category
+        h2 Reservations & Dining
+        .faq-grid
+          .faq-item
+            h3 Do I need to book a table in advance?
+            p While we always reserve a portion of our dining room for walk-in guests, we highly recommend booking a table in advance to secure your preferred date and time, especially for weekend dining and holiday seatings.
+          .faq-item
+            h3 What is your dress code?
+            p Gourmet Haven welcomes guests in smart casual attire. We kindly request that guests refrain from wearing excessively casual clothing, sportswear, or beachwear in the main dining room.
+          .faq-item
+            h3 Do you host private events or corporate parties?
+            p Absolutely. We offer fully tailored private dining experiences for corporate functions, birthdays, and celebrations. Our dining rooms can accommodate up to 80 seated guests. Please contact our support team for custom menus and booking parameters.
+
+      .faq-category
+        h2 Menu & Dietary Adjustments
+        .faq-grid
+          .faq-item
+            h3 Do you accommodate food allergies and dietary needs?
+            p Yes, we take food safety and allergies extremely seriously. Our kitchen can adjust dishes to accommodate gluten-free, nut-free, vegan, and dairy-free preferences. Please notify your server of any allergies prior to ordering.
+          .faq-item
+            h3 What is Chef Lucien Hale's signature menu item?
+            p Chef de Cuisine Lucien Hale's signature creation is the famous <strong>"L'Éclat de Turbot Rôti,"</strong> featuring fresh bone-roasted wild turbot layered with Perigord black truffle, served alongside hand-turned baby artichokes in a velvety champagne-caviar emulsion.
+          .faq-item
+            h3 Do you have vegan and vegetarian menus?
+            p We offer dedicated vegan and vegetarian choices across our standard menu, ranging from gourmet heirloom tomato bruschettas to seasonal plant-based main courses.
+
+      .faq-category
+        h2 Delivery & Ordering
+        .faq-grid
+          .faq-item
+            h3 What is your delivery range and timing?
+            p We deliver premium meals within a 10-mile radius of Gourmet Haven. Delivery times generally range between 30 to 50 minutes depending on order size and distance.
+          .faq-item
+            h3 Can I cancel or modify my online order?
+            p Because our kitchen begins preparing dishes immediately to ensure peak freshness, online orders can only be cancelled or modified within 5 minutes of placement. Please call us directly for urgent changes.

@@ -1,0 +1,23 @@
+header.main-header
+  .container
+    a.logo(href="/") Gourmet Haven
+    
+    input#nav-toggle(type="checkbox")
+    
+    nav.main-nav
+      ul
+        li: a(href="/") Home
+        li: a(href="/menu") Menu
+        li: a(href="/tasting-menu") Tasting Menu
+        li: a(href="/gallery") Gallery
+        li: a(href="/about") About
+        li: a(href="/reservations") Reservations
+        li: a(href="/contact") Contact
+    .header-actions
+      a.cart-btn(href="/cart")
+        i.fas.fa-shopping-cart
+        span.cart-count 0
+      a.order-status-btn(href="/order-confirmation" title="Receipt Lookup")
+        i.fas.fa-receipt
+      label.nav-toggle-label(for="nav-toggle")
+        span

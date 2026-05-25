@@ -1,0 +1,35 @@
+extends layouts/app.pug
+
+block seo
+  title Shopping Cart | Gourmet Haven
+
+block content
+  .breadcrumbs
+    .container
+      a(href="/") Home
+      span Shopping Cart
+
+  .page-hero
+    .container
+      h1 Your Shopping Cart
+      p Review your exquisite culinary selections prior to checkout
+
+  section.cart-page
+    .container
+      .cart-container
+        .cart-items#cartItems
+          // Items will be injected by JS
+          p.empty-msg Your cart is currently empty.
+        
+        .cart-summary
+          h3 Order Summary
+          .summary-row
+            span Subtotal
+            span.subtotal $0.00
+          .summary-row
+            span Tax (8%)
+            span.tax $0.00
+          .summary-row.total
+            span Total
+            span.total-price $0.00
+          a.checkout-btn(href="/checkout") Proceed to Checkout

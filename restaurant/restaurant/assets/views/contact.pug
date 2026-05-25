@@ -1,0 +1,50 @@
+extends layouts/app.pug
+
+block seo
+  title Contact Us | Gourmet Haven
+
+block content
+  .breadcrumbs
+    .container
+      a(href="/") Home
+      span Contact Us
+
+  .page-hero
+    .container
+      h1 Contact Us
+      p We would love to hear from you. Get in touch with our team.
+
+  section.contact-section
+    .container
+      .contact-grid
+        .contact-info-card
+          h3 Get in Touch
+          .info-item
+            .icon: i.fas.fa-map-marker-alt
+            .text
+              h4 Address
+              p 123 Gourmet St, Food City
+          .info-item
+            .icon: i.fas.fa-phone
+            .text
+              h4 Phone
+              p (555) 123-4567
+          .info-item
+            .icon: i.fas.fa-envelope
+            .text
+              h4 Email
+              p hello@gourmethaven.com
+        
+        .contact-form-card
+          h3 Send a Message
+          form
+            .form-group
+              label Name
+              input(type="text" placeholder="Your Name" required)
+            .form-group
+              label Email
+              input(type="email" placeholder="Your Email" required)
+            .form-group
+              label Message
+              textarea(placeholder="Write your message here..." required)
+            button.submit-btn(type="submit") Submit Message

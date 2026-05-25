@@ -1,0 +1,85 @@
+extends layouts/app.pug
+
+block seo
+  title Chef's Table Tasting Experience | Gourmet Haven
+  meta(name="description" content="Embark on a multi-course culinary voyage curated by Executive Chef Lucien Hale. Enjoy exclusive tableside plating at our intimate Chef's Table.")
+
+block content
+  .page-hero
+    .container
+      h1 Chef's Table
+      p An intimate bespoke multi-course journey at Gourmet Haven
+
+  .container
+    p.tasting-hero-desc
+      | Welcome to the pinnacle of **Gourmet Haven**. The Chef's Table is a restricted reservation-only experience limited to **8 select guests per evening**. You will sit directly in the heart of our culinary vault, interacting face-to-face with Executive Chef Lucien Hale as he orchestrates a bespoke tableside sensory tasting.
+
+    .tasting-menu-card
+      .menu-header
+        h2 L'Éclat de la Terre
+        span.price $295 Per Guest
+        span.price(style="font-size:1.1rem; color:#D4AF37; margin-top:8px;") Optional Wine pairing by our Sommelier - $150
+        .gold-divider
+
+      .menu-course
+        span.course-number Amuse-Bouche
+        h3 Golden Oyster Nectar
+        p Freshly harvested cold-water oysters crowned with golden lemon verbena foam and toasted pine nut essence.
+        .course-divider
+
+      .menu-course
+        span.course-number First Course
+        h3 Imperial Caviar Medley
+        p Osetra imperial caviar served on soft buck-wheat blinis with light lemon verbena whipped crème fraiche.
+        .course-divider
+
+      .menu-course
+        span.course-number Second Course
+        h3 Gold-Leaf Foie Gras
+        p Pan-seared decadent artisan goose liver garnished with sweet caramelized baby figs and flakes of 24k gold leaf.
+        .course-divider
+
+      .menu-course
+        span.course-number Main Voyage
+        h3 L'Éclat de Turbot Rôti
+        p Slow bone-roasted turbot basted in artisan butter, draped inside a velvet-like caviar and white champagne reduction.
+        .course-divider
+
+      .menu-course
+        span.course-number Intermezzo
+        h3 Emerald Sorbet Elixir
+        p A refreshing, botanical cold-pressed palette cleanser made from garden mint, lime zest, and cold gin-infused sorbet.
+        .course-divider
+
+      .menu-course
+        span.course-number Grand Finale
+        h3 Madagascar Mille-Feuille
+        p Crisped golden puff pastry sheets stacked between sweet ribbons of Madagascar vanilla diplomat cream.
+
+    // Inquiry Block styled as Reservation section
+    .reservation-section(style="margin-bottom: 80px;")
+      .reservation-container
+        h2(style="font-family:'Playfair Display', serif; text-align:center; color:#1A1A1B; font-size:2.2rem; margin-bottom:15px;") Reserve the Chef's Table
+        p(style="text-align:center; color:#666; margin-bottom:35px; font-weight:300;") Select a date and group size to request your bespoke dining window.
+        
+        form(action="#" method="POST")
+          .form-row
+            .form-group
+              label(for="tasting-date") Requested Date
+              input#tasting-date(type="date" required)
+            .form-group
+              label(for="tasting-guests") Party Size (Max 8)
+              input#tasting-guests(type="number" min="1" max="8" value="2" required)
+          
+          .form-group
+            label(for="tasting-pairing") Wine Pairing Tier
+            select#tasting-pairing(style="width:100%; padding:14px 18px; border:1.5px solid #E2E8F0; border-radius:6px; background-color:#fff; font-family:'Inter',sans-serif; font-size:1rem;")
+              option(value="none") No Pairing (À La Carte drinks)
+              option(value="standard") Grand Reserve Pairing (+$150/guest)
+              option(value="prestige") Sommelier's Vault Prestige Pairing (+$275/guest)
+              
+          .form-group
+            label(for="tasting-notes") Dietary Restrictions or Requests
+            textarea#tasting-notes(placeholder="Please let us know of any severe allergies or specialized requests so the Culinary Team can accommodate them.")
+            
+          button.book-btn(type="submit") Submit Booking Request

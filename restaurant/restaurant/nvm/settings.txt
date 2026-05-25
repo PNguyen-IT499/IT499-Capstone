@@ -1,0 +1,2 @@
+root: C:\projects\restaurant\restaurant\nvm
+path: C:\Program Files\nodejs

@@ -1,0 +1,92 @@
+extends layouts/app.pug
+
+block seo
+  title Private Events & Catering | Gourmet Haven
+  meta(name="description" content="Host your private galas, corporate dinners, or intimate vault tastings at Gourmet Haven. Learn about venue capacities and customized catering menus.")
+
+block content
+  .page-hero
+    .container
+      h1 Private Events
+      p Orchestrating bespoke celebrations and corporate gatherings
+
+  .container
+    p.tasting-hero-desc
+      | Host your milestones in our historic vaults or grand dining saloons. **Gourmet Haven** offers multiple distinct architectural layouts, customizable Michelin-caliber catering menus, and private event planners to curate every detail.
+
+    .spaces-grid
+      .space-card
+        img(src="/img/dining_room_sanctuary.png" alt="The Grand Ballroom Space")
+        .space-info
+          h3 The Grand Ballroom
+          p Our primary dining saloon features soaring gold leaf ceilings, historic crystal chandeliers, and customized seating formats. Perfect for large corporate functions and wedding celebrations.
+          .space-meta
+            .meta-item
+              span.label Seated Capacity
+              span.value 120 Guests
+            .meta-item
+              span.label Reception Capacity
+              span.value 180 Guests
+
+      .space-card
+        img(src="/img/historic_wine_vault.png" alt="The Chef's Wine Vault")
+        .space-info
+          h3 The Historic Wine Vault
+          p Dine surrounded by thousands of the world's most coveted vintage wines. A completely secluded brick-walled subterranean vault, ideal for high-end board dinners and private pairings.
+          .space-meta
+            .meta-item
+              span.label Seated Capacity
+              span.value 22 Guests
+            .meta-item
+              span.label Reception Capacity
+              span.value 35 Guests
+
+      .space-card
+        img(src="/img/botanical_terrace_garden.png" alt="The Botanical Terrace Garden")
+        .space-info
+          h3 The Botanical Terrace
+          p An al fresco glass-encased courtyard highlighted by hanging jasmine vines, a private cocktail bar, and premium outdoor fireplace structures. Perfect for summer cocktail receptions.
+          .space-meta
+            .meta-item
+              span.label Seated Capacity
+              span.value 60 Guests
+            .meta-item
+              span.label Reception Capacity
+              span.value 100 Guests
+
+    // Inquiry Block styled as Reservation section
+    .reservation-section(style="margin-bottom: 80px;")
+      .reservation-container
+        h2(style="font-family:'Playfair Display', serif; text-align:center; color:#1A1A1B; font-size:2.2rem; margin-bottom:15px;") Event Inquiry Portal
+        p(style="text-align:center; color:#666; margin-bottom:35px; font-weight:300;") Fill out the details below, and an Event Concierge will contact you within 24 hours.
+        
+        form(action="#" method="POST")
+          .form-row
+            .form-group
+              label(for="event-name") Full Name
+              input#event-name(type="text" placeholder="Your Name" required)
+            .form-group
+              label(for="event-email") Email Address
+              input#event-email(type="email" placeholder="email@example.com" required)
+              
+          .form-row
+            .form-group
+              label(for="event-date") Event Date
+              input#event-date(type="date" required)
+            .form-group
+              label(for="event-guests") Estimated Guest Count
+              input#event-guests(type="number" min="10" max="250" placeholder="10 - 250" required)
+              
+          .form-group
+            label(for="event-type") Venue Choice
+            select#event-type(style="width:100%; padding:14px 18px; border:1.5px solid #E2E8F0; border-radius:6px; background-color:#fff; font-family:'Inter',sans-serif; font-size:1rem;")
+              option(value="ballroom") The Grand Ballroom (120 - 180 guests)
+              option(value="vault") The Historic Wine Vault (10 - 35 guests)
+              option(value="terrace") The Botanical Terrace (40 - 100 guests)
+              option(value="full-buyout") Complete Restaurant Buyout (Up to 250 guests)
+              
+          .form-group
+            label(for="event-comments") Event Goals & Menu Preferences
+            textarea#event-comments(placeholder="Tell us about the occasion (e.g., Anniversary, Board Dinner, Corporate Gala). Mention any specific audio-visual requirements or tasting preferences.")
+            
+          button.book-btn(type="submit") Submit Inquiry

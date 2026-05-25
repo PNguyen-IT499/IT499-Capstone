@@ -1,0 +1,117 @@
+@import "variables";
+
+.tasting-hero-desc {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 60px;
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: #666;
+  font-weight: 300;
+  
+  strong {
+    color: $primary;
+    font-weight: 600;
+  }
+}
+
+.tasting-menu-card {
+  background: $primary;
+  color: $white;
+  max-width: 850px;
+  margin: 0 auto 80px;
+  padding: 60px;
+  border-radius: 15px;
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.15);
+  border: 2px solid $secondary;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    right: 15px;
+    bottom: 15px;
+    border: 1px dashed rgba($secondary, 0.3);
+    pointer-events: none;
+    border-radius: 10px;
+  }
+
+  @media (max-width: 768px) {
+    padding: 35px 20px;
+  }
+
+  .menu-header {
+    text-align: center;
+    margin-bottom: 50px;
+    
+    h2 {
+      font-family: $font-header;
+      font-size: 2.5rem;
+      color: $secondary;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+    
+    span.price {
+      font-size: 1.4rem;
+      color: rgba($white, 0.85);
+      font-weight: 300;
+      letter-spacing: 1px;
+      display: block;
+    }
+    
+    .gold-divider {
+      width: 80px;
+      height: 2px;
+      background: $secondary;
+      margin: 20px auto 0;
+    }
+  }
+
+  .menu-course {
+    margin-bottom: 40px;
+    text-align: center;
+    position: relative;
+    
+    &:last-child {
+      margin-bottom: 0;
+    }
+    
+    span.course-number {
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      color: $secondary;
+      letter-spacing: 2px;
+      display: block;
+      margin-bottom: 6px;
+    }
+    
+    h3 {
+      font-family: $font-header;
+      font-size: 1.6rem;
+      margin-bottom: 8px;
+      color: $white;
+    }
+    
+    p {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: rgba($white, 0.7);
+      max-width: 600px;
+      margin: 0 auto;
+      font-weight: 300;
+    }
+    
+    .course-divider {
+      width: 40px;
+      height: 1px;
+      background: rgba($white, 0.15);
+      margin: 30px auto 0;
+    }
+  }
+}

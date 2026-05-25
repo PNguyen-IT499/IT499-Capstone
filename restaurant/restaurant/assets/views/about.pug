@@ -1,0 +1,72 @@
+extends layouts/app.pug
+
+block seo
+  title About Us | Gourmet Haven
+
+block content
+  .breadcrumbs
+    .container
+      a(href="/") Home
+      span About Us
+
+  .about-hero
+    .container
+      h1 Our Story
+      p Crafting culinary memories since 1995
+
+  .about-story-section
+    .container
+      .story-grid
+        .story-text
+          h2 The Gourmet Haven Journey
+          p We are a family-owned restaurant dedicated to providing the best dining experience. Founded in 1995, we have been serving the community for over 25 years, combining traditional culinary secrets with contemporary innovation.
+          p Every dish that leaves our kitchen is a testament to our commitment to excellence, quality, and hospitality.
+        .story-stats
+          .stat-card
+            span.number 25+
+            span.label Years of Excellence
+          .stat-card
+            span.number 3
+            span.label Michelin Stars
+          .stat-card
+            span.number 40k+
+            span.label Happy Guests
+
+  .chef-legend-section
+    .container
+      .chef-grid
+        .chef-image
+          img(src="/img/chef_lucien_hale.png" alt="Chef de Cuisine Lucien Hale")
+        .chef-info
+          span.chef-tag Culinary Director & Legend
+          h2 Chef de Cuisine Lucien Hale
+          p.chef-quote "True gastronomy is the silent dialogue between the patience of nature and the precision of the hand."
+          p.chef-bio Born in the heart of the Loire Valley, Chef de Cuisine Lucien Hale dedicated his life to the absolute mastery of classical French techniques integrated with contemporary seasonal elements. Known for his intense focus and profound respect for native ingredients, Lucien Hale revolutionized the modern dining experience.
+          p.chef-bio His signature dish, <strong>"L'Éclat de Turbot Rôti,"</strong> features sustainably sourced wild turbot roasted on the bone, infused with thin sheets of Perigord black truffle, served alongside hand-turned heirloom baby artichokes, and finished with a velvety champagne-caviar emulsion. This three-Michelin-starred masterpiece established Gourmet Haven as a destination for international food connoisseurs.
+          
+          h3 Award-Winning Milestones
+          .badges-container
+            .badge-item
+              .badge-icon
+                i.fas.fa-award
+              .badge-text
+                h4 Médaille d'Or de la Gastronomie (2012)
+                p For pioneering modern French-fusion cuisine.
+            .badge-item
+              .badge-icon
+                i.fas.fa-star
+              .badge-text
+                h4 3 Michelin Stars
+                p Consistent global culinary excellence.
+            .badge-item
+              .badge-icon
+                i.fas.fa-medal
+              .badge-text
+                h4 Auguste Escoffier Grand Prix (2018)
+                p Lifetime achievement in classical and modern culinary arts.
+            .badge-item
+              .badge-icon
+                i.fas.fa-ribbon
+              .badge-text
+                h4 Order of Agricultural Merit (2024)
+                p Knighted by the French Republic for local agronomy dedication.

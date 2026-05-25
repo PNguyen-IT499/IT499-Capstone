@@ -1,0 +1,145 @@
+extends layouts/app.pug
+
+block seo
+  title Menu | Gourmet Haven
+  meta(name="description" content="Explore our exquisite menu featuring a selection of gourmet appetizers, signature entrées, desserts, and craft cocktails.")
+
+block content
+  .breadcrumbs
+    .container
+      a(href="/") Home
+      span Menu
+
+  section.menu-hero
+    .container
+      h1 Our Exquisite Menu
+      p A culinary journey through the finest flavors.
+
+  section.menu-categories
+    .container
+      .category-filters
+        button.active(data-category="all") All
+        button(data-category="appetizers") Appetizers
+        button(data-category="mains") Entrées
+        button(data-category="desserts") Desserts
+        button(data-category="drinks") Drinks
+
+      .menu-grid
+        //- Appetizers
+        .menu-item(data-category="appetizers")
+          img(src="/img/products/caviar.png" alt="Caviar d'Aquitaine")
+          .item-info
+            .chef-special-badge Caviar Reserve
+            h3 Caviar d'Aquitaine
+            p Premium white sturgeon caviar, gold-flecked blinis, crème fraîche, mother-of-pearl service.
+            span.price $95.00
+            button.add-to-cart(data-id="7" data-name="Caviar d'Aquitaine" data-price="95") Add to Cart
+
+        .menu-item(data-category="appetizers")
+          img(src="/img/products/appetizer.png" alt="Heirloom Tomato Bruschetta")
+          .item-info
+            h3 Heirloom Tomato Bruschetta
+            p Toasted rustic sourdough with aged balsamic glaze, extra virgin olive oil, and fresh opal basil.
+            span.price $14.00
+            button.add-to-cart(data-id="1" data-name="Heirloom Tomato Bruschetta" data-price="14") Add to Cart
+
+        .menu-item(data-category="appetizers")
+          img(src="/img/products/foie_gras.png" alt="Foie Gras Poêlé")
+          .item-info
+            h3 Foie Gras Poêlé
+            p Pan-seared A-grade duck foie gras, caramelized mission figs, toasted brioche, port wine reduction.
+            span.price $32.00
+            button.add-to-cart(data-id="8" data-name="Foie Gras Poêlé" data-price="32") Add to Cart
+
+        //- Entrées (Mains)
+        .menu-item(data-category="mains")
+          img(src="/img/products/turbot_roti.png" alt="L'Éclat de Turbot Rôti")
+          .item-info
+            .chef-special-badge Chef's Signature
+            h3 L'Éclat de Turbot Rôti
+            p Bone-roasted wild turbot layered with Perigord black truffle, hand-turned baby artichokes, and velvety champagne-caviar emulsion.
+            span.price $68.00
+            button.add-to-cart(data-id="5" data-name="L'Éclat de Turbot Rôti" data-price="68") Add to Cart
+
+        .menu-item(data-category="mains")
+          img(src="/img/products/duck.png" alt="Canard Rôti à l'Orange")
+          .item-info
+            h3 Canard Rôti à l'Orange
+            p Crisp-skinned duck breast, spiced sweet potato purée, baby heirloom carrots, rich blood orange reduction.
+            span.price $54.00
+            button.add-to-cart(data-id="9" data-name="Canard Rôti à l'Orange" data-price="54") Add to Cart
+
+        .menu-item(data-category="mains")
+          img(src="/img/products/main.png" alt="Wagyu Beef Steak")
+          .item-info
+            h3 Wagyu Beef Steak
+            p A5 grade Miyazaki wagyu steak served medium-rare, roasted winter root vegetables, truffled bone marrow jus.
+            span.price $45.00
+            button.add-to-cart(data-id="2" data-name="Wagyu Beef Steak" data-price="45") Add to Cart
+
+        .menu-item(data-category="mains")
+          img(src="/img/products/venison.png" alt="Filet de Chevreuil")
+          .item-info
+            h3 Filet de Chevreuil
+            p Seared venison loin, wild chanterelle mushrooms, parsnip cream, juniper berry and ruby port sauce.
+            span.price $58.00
+            button.add-to-cart(data-id="10" data-name="Filet de Chevreuil" data-price="58") Add to Cart
+
+        //- Desserts
+        .menu-item(data-category="desserts")
+          img(src="/img/products/mille_feuille.png" alt="Mille-Feuille à la Vanille")
+          .item-info
+            h3 Mille-Feuille à la Vanille
+            p Golden caramelized puff pastry layers, Madagascar vanilla bean diplomat cream, orange blossom dust.
+            span.price $16.00
+            button.add-to-cart(data-id="11" data-name="Mille-Feuille à la Vanille" data-price="16") Add to Cart
+
+        .menu-item(data-category="desserts")
+          img(src="/img/products/dessert.png" alt="Chocolate Lava Cake")
+          .item-info
+            h3 Chocolate Lava Cake
+            p Molten center Valrhona chocolate cake, salted caramel drizzle, Tahitian vanilla bean gelato.
+            span.price $12.00
+            button.add-to-cart(data-id="3" data-name="Chocolate Lava Cake" data-price="12") Add to Cart
+
+        .menu-item(data-category="desserts")
+          img(src="/img/products/souffle.png" alt="Soufflé de Grand Marnier")
+          .item-info
+            h3 Soufflé de Grand Marnier
+            p Traditional light orange liqueur soufflé, blood orange sorbet, grand marnier custard drizzle.
+            span.price $18.00
+            button.add-to-cart(data-id="12" data-name="Soufflé de Grand Marnier" data-price="18") Add to Cart
+
+        //- Drinks
+        .menu-item(data-category="drinks")
+          img(src="/img/products/elixir_or.png" alt="L'Élixir d'Or")
+          .item-info
+            .chef-special-badge Liquid Luxury
+            h3 L'Élixir d'Or
+            p Botanical gin infused with saffron-honey, meyer lemon, topped with champagne and 24k gold leaf.
+            span.price $22.00
+            button.add-to-cart(data-id="6" data-name="L'Élixir d'Or" data-price="22") Add to Cart
+
+        .menu-item(data-category="drinks")
+          img(src="/img/products/emerald_fizz.png" alt="Royal Emerald Fizz")
+          .item-info
+            h3 Royal Emerald Fizz
+            p Crisp English cucumber, muddled sweet basil, organic elderflower, premium tonic, dry prosecco float.
+            span.price $20.00
+            button.add-to-cart(data-id="13" data-name="Royal Emerald Fizz" data-price="20") Add to Cart
+
+        .menu-item(data-category="drinks")
+          img(src="/img/products/drink.png" alt="Craft Amber Cocktail")
+          .item-info
+            h3 Craft Amber Cocktail
+            p Barrel-aged bourbon, aromatic bitters, flame-kissed orange peel twist, single crystal ice sphere.
+            span.price $16.00
+            button.add-to-cart(data-id="4" data-name="Craft Amber Cocktail" data-price="16") Add to Cart
+
+        .menu-item(data-category="drinks")
+          img(src="/img/products/nectar_noir.png" alt="Nectar Noir")
+          .item-info
+            h3 Nectar Noir
+            p Double shot single-origin espresso, black truffle infused honey, orange Grand Marnier, dark cacao dust.
+            span.price $24.00
+            button.add-to-cart(data-id="14" data-name="Nectar Noir" data-price="24") Add to Cart

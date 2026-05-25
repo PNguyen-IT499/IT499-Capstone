@@ -1,0 +1,97 @@
+extends layouts/app.pug
+
+block seo
+  title Checkout | Gourmet Haven
+
+block content
+  .breadcrumbs
+    .container
+      a(href="/") Home
+      a(href="/cart") Cart
+      span Checkout
+
+  .page-hero
+    .container
+      h1 Finalize Order
+      p Complete your billing and fulfillment choices to enjoy your meal
+
+  section.checkout-page
+    .container
+      .checkout-grid
+        .checkout-form
+          form#checkoutForm
+            h3 Fulfillment Method
+            .form-group
+              .fulfillment-selector
+                button.fulfillment-btn.active#deliveryBtn(type="button")
+                  i.fas.fa-shipping-fast
+                  span Delivery
+                button.fulfillment-btn#pickupBtn(type="button")
+                  i.fas.fa-store
+                  span Curbside Pickup
+
+            h3 Guest Information
+            .form-group
+              label Full Name
+              input(type="text" placeholder="Enter your full name" required)
+            .form-group
+              label Email Address
+              input(type="email" placeholder="name@example.com" required)
+
+            .delivery-details#deliveryDetails
+              h3 Delivery Details
+              .form-group
+                label Delivery Address
+                textarea#deliveryAddressInput(placeholder="Street Address, Apartment/Suite, City, ZIP Code" required)
+              .form-group
+                label Drop-off Instructions (Optional)
+                textarea#deliveryInstructionsInput(placeholder="e.g. Leave at the front gate, ring the bell")
+
+            .pickup-details#pickupDetails(style="display: none;")
+              h3 Curbside Pickup Details
+              .form-group
+                label Select Pickup Time
+                select#pickupTimeSelect
+                  option(value="asap") ASAP (25 - 35 Mins)
+                  option(value="18:00") 06:00 PM
+                  option(value="18:30") 06:30 PM
+                  option(value="19:00") 07:00 PM
+                  option(value="19:30") 07:30 PM
+                  option(value="20:00") 08:00 PM
+              .form-group
+                label Vehicle Description (Optional)
+                input#pickupVehicleInput(type="text" placeholder="e.g. Black Toyota RAV4, License plate ABC-987")
+            
+            h3 Payment Details
+            .payment-simulation
+              p.note This is a secure demo payment simulation.
+              .form-group
+                label Card Number
+                input(type="text" placeholder="4111 2222 3333 4444" required)
+              .form-row
+                .form-group
+                  label Expiry Date
+                  input(type="text" placeholder="MM/YY" required)
+                .form-group
+                  label CVV Security Code
+                  input(type="text" placeholder="321" required)
+            
+            button.place-order-btn(type="submit") Place Order & Pay
+        
+        .order-review
+          h3 Review Your Order
+          .review-items#reviewItems
+            // Items injected by JS
+          .review-summary
+            .summary-row
+              span Subtotal
+              span.subtotal $0.00
+            .summary-row#deliveryFeeRow
+              span Delivery Fee
+              span.delivery-fee $5.00
+            .summary-row
+              span Tax (8%)
+              span.tax $0.00
+            .summary-row.total
+              span Total Amount
+              span.total-price $0.00

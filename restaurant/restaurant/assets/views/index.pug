@@ -1,0 +1,202 @@
+extends layouts/app.pug
+
+block seo
+  title Gourmet Haven | Fine Dining & Delivery
+  meta(name="description" content="Gourmet Haven offers a premium dining experience with a focus on fresh ingredients and exquisite flavors. Order online for delivery or book a table.")
+
+block content
+  section.home-hero
+    .container
+      .hero-content
+        h1 Experience Culinary Excellence
+        p From our kitchen to your heart, we serve memories on a plate.
+        .hero-btns
+          a.btn-primary(href="/menu") View Menu
+          a.btn-secondary(href="/reservations") Book a Table
+
+  section.featured-dishes
+    .container
+      h2 Featured Dishes
+      .featured-grid
+        .dish-card
+          .img-container
+            img(src="img/products/main.png" alt="Wagyu Steak")
+          .card-content
+            h3 Wagyu Beef Steak
+            p Our signature dish, cooked to perfection.
+        .dish-card
+          .img-container
+            img(src="img/products/appetizer.png" alt="Bruschetta")
+          .card-content
+            h3 Heirloom Bruschetta
+            p Fresh flavors in every bite.
+        .dish-card
+          .img-container
+            img(src="img/products/dessert.png" alt="Lava Cake")
+          .card-content
+            h3 Lava Cake
+            p The perfect end to your meal.
+
+  section.reviews-section
+    .container
+      h2 Gastronomic Acclaim
+      p.section-subtitle What culinary critics and guests say about Gourmet Haven
+      
+      .reviews-slider-wrapper
+        button.slider-arrow.arrow-left#prevReviewBtn: i.fas.fa-chevron-left
+        
+        .reviews-slider-container
+          .reviews-track#reviewsTrack
+            .review-card.active(data-index="0")
+              .review-rating
+                i.fas.fa-star
+                i.fas.fa-star
+                i.fas.fa-star
+                i.fas.fa-star
+                i.fas.fa-star
+              p.review-text "Lucien Hale’s 'L’Éclat de Turbot Rôti' is an absolute revelation. The bone-roasted turbot is incredibly delicate, and the velvet champagne-caviar emulsion elevates it to a masterwork of French gastronomy."
+              .reviewer-info
+                .reviewer-details
+                  h4 Jean-Luc Moreau
+                  span Culinary Critic, Le Guide Rouge
+            
+            .review-card(data-index="1")
+              .review-rating
+                i.fas.fa-star
+                i.fas.fa-star
+                i.fas.fa-star
+                i.fas.fa-star
+                i.fas.fa-star
+              p.review-text "The reservation was seamless, but the actual dining experience was unforgettable. The dark slate and gold aesthetic creates an atmosphere of sheer luxury that matches the excellence on the plate."
+              .reviewer-info
+                .reviewer-details
+                  h4 Eleanor Vance
+                  span Connoisseur Patron
+            
+            .review-card(data-index="2")
+              .review-rating
+                i.fas.fa-star
+                i.fas.fa-star
+                i.fas.fa-star
+                i.fas.fa-star
+                i.fas.fa-star
+              p.review-text "Even their delivery options retain a high level of plating freshness. Gourmet Haven brings true five-star fine dining right to your doorstep without losing a single drop of sophistication."
+              .reviewer-info
+                .reviewer-details
+                  h4 Marcus Sterling
+                  span Food & Wine Editor
+
+            .review-card(data-index="3")
+              .review-rating
+                i.fas.fa-star
+                i.fas.fa-star
+                i.fas.fa-star
+                i.fas.fa-star
+                i.fas.fa-star
+              p.review-text "A masterclass in curbside presentation. The food arrived temperature-perfect and packed in bespoke luxury containers that made dining at home feel like a front-row seat at the chef's table."
+              .reviewer-info
+                .reviewer-details
+                  h4 Gourmet Traveller
+                  span Editorial Feature
+
+            .review-card(data-index="4")
+              .review-rating
+                i.fas.fa-star
+                i.fas.fa-star
+                i.fas.fa-star
+                i.fas.fa-star
+                i.fas.fa-star
+              p.review-text "Chef Lucien Hale's return is a triumph. The harmony of textures in his saffron gin elixir represents a new epoch of botanical mixology."
+              .reviewer-info
+                .reviewer-details
+                  h4 La Tribune
+                  span Gastronomy Column
+
+            .review-card(data-index="5")
+              .review-rating
+                i.fas.fa-star
+                i.fas.fa-star
+                i.fas.fa-star
+                i.fas.fa-star
+                i.fas.fa-star
+              p.review-text "Gourmet Haven doesn't just serve meals; they orchestrate culinary narratives. From the initial booking to the final truffle infusion, it is flawless."
+              .reviewer-info
+                .reviewer-details
+                  h4 Alister Caine
+                  span Luxury Lifestyle Editor
+
+        button.slider-arrow.arrow-right#nextReviewBtn: i.fas.fa-chevron-right
+      
+      .slider-dots#sliderDots
+        span.dot.active(data-index="0")
+        span.dot(data-index="1")
+        span.dot(data-index="2")
+        span.dot(data-index="3")
+        span.dot(data-index="4")
+        span.dot(data-index="5")
+
+  section.press-recognition-section
+    .container
+      span.press-title As Seen In
+      .press-logos-grid
+        .press-logo.press-bloomberg
+          svg(viewBox="0 0 120 18" width="120" height="18" fill="currentColor")
+            text(x="0" y="14" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="900" font-size="15" letter-spacing="-0.5px") Bloomberg
+        .press-logo.press-eater
+          svg(viewBox="0 0 80 24" width="80" height="24" fill="currentColor")
+            text(x="0" y="18" font-family="'Impact', 'Arial Black', sans-serif" font-weight="900" font-size="20" letter-spacing="0.5px" fill="#E11D48") EATER
+        .press-logo.press-nyt
+          svg(viewBox="0 0 160 24" width="160" height="24" fill="currentColor")
+            text(x="0" y="18" font-family="'Georgia', serif" font-weight="700" font-size="15" letter-spacing="-0.5px") The New York Times
+        .press-logo.press-forbes
+          svg(viewBox="0 0 90 24" width="90" height="24" fill="currentColor")
+            text(x="0" y="18" font-family="'Georgia', serif" font-weight="800" font-size="19" letter-spacing="-0.2px") Forbes
+        .press-logo.press-michelin
+          svg(viewBox="0 0 160 24" width="160" height="24" fill="currentColor")
+            g(transform="translate(0, 2)")
+              path(d="M10 2 L12 8 L18 10 L12 12 L10 18 L8 12 L2 10 L8 8 Z" fill="#FF4F00")
+              circle(cx="10" cy="10" r="2.5" fill="#FFF")
+            text(x="24" y="17" font-family="'Georgia', serif" font-weight="700" font-size="13" letter-spacing="1px") MICHELIN
+        .press-logo.press-food-wine
+          svg(viewBox="0 0 115 24" width="115" height="24" fill="currentColor")
+            text(x="0" y="18" font-family="'Playfair Display', 'Georgia', serif" font-weight="700" font-size="14" letter-spacing="1.5px") FOOD & WINE
+
+  section.home-location-section
+    .container
+      .location-grid
+        .location-info
+          span.subtitle Find Our Sanctuary
+          h2 Visit Gourmet Haven
+          p Nestled in the heart of the historic culinary district, Gourmet Haven awaits your presence. Come experience Michelin-starred dining or collect your premium curbside orders.
+          
+          .info-list
+            .info-item
+              i.fas.fa-map-marker-alt
+              .text
+                h4 Address
+                p 123 L'Étoile Boulevard, Culinary District, NY 10013
+            .info-item
+              i.fas.fa-phone
+              .text
+                h4 Private Reservations
+                p +1 (212) 555-0195
+            .info-item
+              i.fas.fa-clock
+              .text
+                h4 Dinner Service Hours
+                p Tue - Sun: 5:30 PM - 11:00 PM (Monday Closed)
+            .info-item
+              i.fas.fa-parking
+              .text
+                h4 Valet Parking
+                p Complimentary private valet service available at the front entrance
+        
+        .location-map-container
+          iframe(src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3024.2219901290325!2d-74.00840068459492!3d40.71312997933185!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a1e2f9b23b1%3A0x6b7720bc2a2f8c5b!2sNY%2010013%2C%20USA!5e0!3m2!1sen!2s!4v1653000000000!5m2!1sen!2s" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade")
+
+  section.cta-section
+    .container
+      .cta-card
+        h2 Want to stay home?
+        p Order your favorite dishes online and we'll deliver them to your doorstep.
+        a.btn-primary(href="/menu") Order Now

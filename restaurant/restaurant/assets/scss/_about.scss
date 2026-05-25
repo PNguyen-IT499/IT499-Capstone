@@ -1,0 +1,278 @@
+// About Us Page Styles
+@import "variables";
+
+.about-hero {
+  height: 40vh;
+  background: linear-gradient(rgba($primary, 0.7), rgba($primary, 0.7)), url('/img/restaurant.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: $white;
+
+  h1 {
+    font-family: $font-header;
+    font-size: 3.5rem;
+    color: $secondary;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+
+  p {
+    font-size: 1.2rem;
+    font-weight: 300;
+    letter-spacing: 1px;
+    color: rgba($white, 0.8);
+  }
+}
+
+.about-story-section {
+  padding: 80px 0;
+  background-color: $bg;
+
+  .story-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 60px;
+    align-items: center;
+  }
+
+  .story-text {
+    h2 {
+      font-family: $font-header;
+      font-size: 2.2rem;
+      color: $primary;
+      margin-bottom: 25px;
+      position: relative;
+
+      &::after {
+        content: '';
+        display: block;
+        width: 60px;
+        height: 3px;
+        background: $secondary;
+        margin-top: 15px;
+      }
+    }
+
+    p {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: #555;
+      margin-bottom: 20px;
+    }
+  }
+
+  .story-stats {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+
+    .stat-card {
+      background: $white;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+      border-left: 4px solid $secondary;
+      text-align: center;
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: translateY(-5px);
+      }
+
+      .number {
+        display: block;
+        font-family: $font-header;
+        font-size: 2.5rem;
+        color: $primary;
+        font-weight: 700;
+        margin-bottom: 5px;
+      }
+
+      .label {
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        color: #777;
+        letter-spacing: 1px;
+      }
+    }
+  }
+}
+
+.chef-legend-section {
+  padding: 100px 0;
+  background-color: $primary;
+  color: $white;
+
+  .chef-grid {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 60px;
+    align-items: flex-start;
+  }
+
+  .chef-image {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border: 2px solid $secondary;
+      margin: 15px;
+      border-radius: 12px;
+      pointer-events: none;
+    }
+
+    img {
+      width: 100%;
+      display: block;
+      transition: transform 0.6s ease;
+      
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+  }
+
+  .chef-info {
+    .chef-tag {
+      background: rgba($secondary, 0.15);
+      color: $secondary;
+      padding: 6px 15px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      display: inline-block;
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      font-family: $font-header;
+      font-size: 2.8rem;
+      color: $secondary;
+      margin-bottom: 20px;
+    }
+
+    .chef-quote {
+      font-family: $font-header;
+      font-size: 1.4rem;
+      font-style: italic;
+      color: rgba($white, 0.9);
+      border-left: 3px solid $secondary;
+      padding-left: 20px;
+      margin-bottom: 30px;
+      line-height: 1.6;
+    }
+
+    .chef-bio {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: rgba($white, 0.75);
+      margin-bottom: 20px;
+
+      strong {
+        color: $secondary;
+      }
+    }
+
+    h3 {
+      font-family: $font-header;
+      font-size: 1.8rem;
+      color: $white;
+      margin: 40px 0 25px 0;
+      border-bottom: 1px solid rgba($white, 0.1);
+      padding-bottom: 10px;
+    }
+  }
+
+  .badges-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+
+  .badge-item {
+    background: rgba($white, 0.03);
+    border: 1px solid rgba($white, 0.05);
+    padding: 20px;
+    border-radius: 12px;
+    display: flex;
+    gap: 15px;
+    align-items: flex-start;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background: rgba($white, 0.06);
+      border-color: rgba($secondary, 0.3);
+      transform: translateY(-3px);
+    }
+
+    .badge-icon {
+      background: rgba($secondary, 0.1);
+      border: 1px dashed rgba($secondary, 0.5);
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      color: $secondary;
+      flex-shrink: 0;
+    }
+
+    .badge-text {
+      h4 {
+        font-family: $font-body;
+        font-size: 1rem;
+        color: $secondary;
+        font-weight: 600;
+        margin-bottom: 5px;
+      }
+
+      p {
+        font-size: 0.85rem;
+        color: rgba($white, 0.6);
+        line-height: 1.5;
+      }
+    }
+  }
+}
+
+// Media Queries for Responsiveness
+@media (max-width: 992px) {
+  .about-story-section {
+    .story-grid {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+  }
+
+  .chef-legend-section {
+    .chef-grid {
+      grid-template-columns: 1fr;
+      gap: 50px;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .chef-legend-section {
+    .badges-container {
+      grid-template-columns: 1fr;
+    }
+  }
+}

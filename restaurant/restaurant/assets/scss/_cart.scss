@@ -1,0 +1,447 @@
+@import "variables";
+
+/* Cart Page Styles */
+.cart-page {
+  padding: 20px 0 80px;
+
+  h1 {
+    font-family: $font-header;
+    font-size: 2.8rem;
+    color: $primary;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+
+  .cart-container {
+    display: grid;
+    grid-template-columns: 1.8fr 1fr;
+    gap: 40px;
+    align-items: start;
+
+    @media (max-width: 992px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .cart-items {
+    background: $white;
+    border-radius: 12px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+    border: 1px solid rgba(0, 0, 0, 0.02);
+
+    .empty-msg {
+      text-align: center;
+      padding: 40px 0;
+      color: #888;
+      font-size: 1.1rem;
+      font-weight: 300;
+
+      i {
+        font-size: 3.5rem;
+        color: rgba($secondary, 0.3);
+        margin-bottom: 20px;
+        display: block;
+      }
+
+      .browse-btn {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 12px 30px;
+        background-color: $primary;
+        color: $secondary;
+        border: 2px solid $secondary;
+        border-radius: 6px;
+        text-transform: uppercase;
+        font-size: 0.9rem;
+        font-weight: 600;
+        letter-spacing: 1px;
+        text-decoration: none;
+        transition: all 0.3s ease;
+
+        &:hover {
+          background-color: $secondary;
+          color: $primary;
+        }
+      }
+    }
+  }
+
+  .cart-item {
+    display: flex;
+    gap: 20px;
+    padding: 25px 0;
+    border-bottom: 1px solid #F1F5F9;
+    align-items: center;
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    img {
+      width: 90px;
+      height: 90px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .item-details {
+      flex: 1;
+
+      h4 {
+        font-family: $font-header;
+        font-size: 1.25rem;
+        color: $primary;
+        margin-bottom: 6px;
+      }
+
+      p {
+        color: #888;
+        font-size: 0.9rem;
+        margin: 0;
+      }
+    }
+
+    .item-quantity {
+      display: flex;
+      align-items: center;
+      border: 1.5px solid #E2E8F0;
+      border-radius: 6px;
+      overflow: hidden;
+
+      button {
+        background: none;
+        border: none;
+        width: 32px;
+        height: 32px;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        color: $primary;
+        transition: background 0.2s;
+
+        &:hover {
+          background-color: #F8F9FA;
+          color: $secondary;
+        }
+      }
+
+      span {
+        width: 35px;
+        text-align: center;
+        font-size: 0.95rem;
+        font-weight: 600;
+      }
+    }
+
+    .item-price {
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: $primary;
+      min-width: 80px;
+      text-align: right;
+    }
+
+    .remove-item {
+      background: none;
+      border: none;
+      color: #EF4444;
+      cursor: pointer;
+      font-size: 1.1rem;
+      padding: 10px;
+      transition: transform 0.2s;
+
+      &:hover {
+        transform: scale(1.15);
+      }
+    }
+  }
+
+  .cart-summary {
+    background: $primary;
+    color: $white;
+    border-radius: 12px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 100px;
+
+    h3 {
+      font-family: $font-header;
+      font-size: 1.8rem;
+      color: $secondary;
+      margin-bottom: 30px;
+      border-bottom: 1px solid rgba($white, 0.1);
+      padding-bottom: 15px;
+    }
+
+    .summary-row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 18px;
+      font-size: 1rem;
+      color: rgba($white, 0.7);
+
+      &.total {
+        margin-top: 25px;
+        border-top: 1px solid rgba($white, 0.15);
+        padding-top: 25px;
+        font-size: 1.3rem;
+        font-weight: 600;
+        color: $white;
+
+        .total-price {
+          color: $secondary;
+        }
+      }
+    }
+
+    .checkout-btn {
+      display: block;
+      width: 100%;
+      text-align: center;
+      padding: 15px;
+      background-color: transparent;
+      color: $secondary;
+      border: 2px solid $secondary;
+      border-radius: 6px;
+      font-size: 1rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      margin-top: 25px;
+      box-sizing: border-box;
+
+      &:hover {
+        background-color: $secondary;
+        color: $primary;
+        box-shadow: 0 5px 15px rgba($secondary, 0.2);
+      }
+    }
+  }
+}
+
+/* Order Status / Tracking Page Styles */
+.order-status-page {
+  padding: 20px 0 80px;
+
+  h1 {
+    font-family: $font-header;
+    font-size: 2.8rem;
+    color: $primary;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+
+  .search-order {
+    max-width: 600px;
+    margin: 0 auto 50px;
+    display: flex;
+    gap: 15px;
+    background: $white;
+    padding: 12px;
+    border-radius: 35px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+    border: 1.5px solid #E2E8F0;
+
+    input {
+      flex: 1;
+      border: none;
+      padding: 10px 20px;
+      font-size: 1rem;
+      background: none;
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    button {
+      padding: 12px 35px;
+      background-color: $primary;
+      color: $secondary;
+      border: 2px solid $secondary;
+      border-radius: 25px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+
+      &:hover {
+        background-color: $secondary;
+        color: $primary;
+      }
+    }
+  }
+
+  .status-display {
+    max-width: 800px;
+    margin: 0 auto;
+    background: $white;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+    border: 1px solid rgba(0, 0, 0, 0.02);
+    overflow: hidden;
+  }
+
+  .status-header {
+    background-color: $primary;
+    color: $white;
+    padding: 30px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    h2 {
+      font-family: $font-header;
+      font-size: 1.6rem;
+      color: $white;
+      margin: 0;
+    }
+
+    .status-badge {
+      background-color: rgba($secondary, 0.15);
+      color: $secondary;
+      border: 1px solid rgba($secondary, 0.3);
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+  }
+
+  /* Progress Timeline */
+  .status-timeline {
+    padding: 50px 40px;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    border-bottom: 1px solid #F1F5F9;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 75px;
+      left: 60px;
+      right: 60px;
+      height: 4px;
+      background-color: #E2E8F0;
+      z-index: 1;
+    }
+
+    .step {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+      flex: 1;
+
+      .icon {
+        width: 54px;
+        height: 54px;
+        background-color: $white;
+        border: 4px solid #E2E8F0;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #A0AEC0;
+        font-size: 1.1rem;
+        transition: all 0.4s ease;
+      }
+
+      .label {
+        margin-top: 15px;
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: #718096;
+        text-align: center;
+      }
+
+      &.completed {
+        .icon {
+          border-color: $secondary;
+          background-color: $secondary;
+          color: $primary;
+        }
+        .label {
+          color: $primary;
+        }
+      }
+
+      &.active {
+        .icon {
+          border-color: $secondary;
+          background-color: $primary;
+          color: $secondary;
+          box-shadow: 0 0 0 5px rgba($secondary, 0.2);
+          animation: pulseStep 2s infinite;
+        }
+        .label {
+          color: $primary;
+          font-weight: 700;
+        }
+      }
+    }
+  }
+
+  .order-details {
+    padding: 40px;
+
+    h3 {
+      font-family: $font-header;
+      font-size: 1.4rem;
+      color: $primary;
+      margin-bottom: 20px;
+    }
+
+    ul {
+      padding: 0;
+      margin: 0 0 30px;
+      list-style-type: none;
+
+      li {
+        display: flex;
+        justify-content: space-between;
+        padding: 12px 0;
+        border-bottom: 1px dotted #E2E8F0;
+        font-size: 1rem;
+        color: $text;
+        font-weight: 300;
+
+        &:last-child {
+          border-bottom: none;
+        }
+      }
+    }
+
+    .order-total {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 2px solid #F1F5F9;
+      padding-top: 20px;
+      font-size: 1.25rem;
+      color: $primary;
+    }
+  }
+}
+
+@keyframes pulseStep {
+  0% {
+    box-shadow: 0 0 0 0 rgba($secondary, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba($secondary, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba($secondary, 0);
+  }
+}

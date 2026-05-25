@@ -1,0 +1,99 @@
+extends layouts/app.pug
+
+block seo
+  title Join the Family Careers | Gourmet Haven
+  meta(name="description" content="Discover professional culinary and hospitality career opportunities at Gourmet Haven. Learn about competitive packages and michelin-level mentorship.")
+
+block content
+  .page-hero
+    .container
+      h1 Join the Family
+      p Shape the future of modern luxury hospitality with us
+
+  .container
+    p.tasting-hero-desc
+      | At **Gourmet Haven**, we believe that exceptional hospitality begins with a passionate, well-cared-for family. We provide a workplace centered on creative freedom, high-caliber culinary training, and structured career paths.
+
+    .benefits-grid
+      .benefit-card
+        .benefit-icon: i.fas.fa-graduation-cap
+        h3 Culinary Mentorship
+        p Direct training and mentorship under Executive Chef Lucien Hale with access to international exchange stages.
+
+      .benefit-card
+        .benefit-icon: i.fas.fa-heartbeat
+        h3 Complete Wellness
+        p Premium private health, dental, and vision insurance policies alongside paid wellness retreats and therapy access.
+
+      .benefit-card
+        .benefit-icon: i.fas.fa-compass
+        h3 Creative Sabbaticals
+        p Paid culinary research trips after two years of service to explore global food histories and bring new ideas to our kitchen.
+
+    .jobs-container
+      h2(style="font-family:'Playfair Display', serif; text-align:center; color:#1A1A1B; font-size:2.2rem; margin-bottom:45px;") Open Opportunities
+
+      .job-card
+        .job-details
+          span.job-type Full-Time
+          h3 Chef de Partie (Sauté)
+          p Culinary Department | Fast-paced high-precision sauté station leadership.
+        a.job-apply-btn(href="#apply-form") Apply Now
+
+      .job-card
+        .job-details
+          span.job-type Full-Time
+          h3 Head Sommelier
+          p Beverage Department | Curation of our historic wine vault and tableside pairing narratives.
+        a.job-apply-btn(href="#apply-form") Apply Now
+
+      .job-card
+        .job-details
+          span.job-type Part-Time
+          h3 Hospitality Host / Hostess
+          p Service Department | Front-of-house guest relations and reservation management.
+        a.job-apply-btn(href="#apply-form") Apply Now
+
+      .job-card
+        .job-details
+          span.job-type Full-Time
+          h3 Premium Dining Server
+          p Service Department | Captivating tableside storytellers and food presentation guides.
+        a.job-apply-btn(href="#apply-form") Apply Now
+
+    // Inquiry Block styled as Reservation section
+    .reservation-section#apply-form(style="margin-bottom: 80px;")
+      .reservation-container
+        h2(style="font-family:'Playfair Display', serif; text-align:center; color:#1A1A1B; font-size:2.2rem; margin-bottom:15px;") Application Portal
+        p(style="text-align:center; color:#666; margin-bottom:35px; font-weight:300;") Submit your application details below, and our Culture Lead will reach out shortly.
+        
+        form(action="#" method="POST")
+          .form-row
+            .form-group
+              label(for="app-name") Full Name
+              input#app-name(type="text" placeholder="Your Name" required)
+            .form-group
+              label(for="app-email") Email Address
+              input#app-email(type="email" placeholder="email@example.com" required)
+              
+          .form-row
+            .form-group
+              label(for="app-phone") Phone Number
+              input#app-phone(type="text" placeholder="+1 (555) 000-0000" required)
+            .form-group
+              label(for="app-role") Requested Position
+              select#app-role(style="width:100%; padding:14px 18px; border:1.5px solid #E2E8F0; border-radius:6px; background-color:#fff; font-family:'Inter',sans-serif; font-size:1rem;")
+                option(value="saute") Chef de Partie (Sauté)
+                option(value="sommelier") Head Sommelier
+                option(value="host") Hospitality Host / Hostess
+                option(value="server") Premium Dining Server
+                
+          .form-group
+            label(for="app-resume") Link to Resume / Portfolio
+            input#app-resume(type="text" placeholder="https://linkedin.com/in/yourprofile or portfolio link" required)
+            
+          .form-group
+            label(for="app-cover") Tell us your culinary / hospitality story
+            textarea#app-cover(placeholder="What draws you to the high-end hospitality environment at Gourmet Haven? Share a brief highlight of your achievements.")
+            
+          button.book-btn(type="submit") Submit Application
