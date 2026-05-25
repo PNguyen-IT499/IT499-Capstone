@@ -4,7 +4,7 @@
   text-align: center;
   background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('../img/products/main.png');
   background-size: cover;
-  background-position: center;
+  background-position: center 45%; // Prevent cutoff
   color: $white;
 
   h1 {
