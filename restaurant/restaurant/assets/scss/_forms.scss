@@ -468,3 +468,25 @@
     }
   }
 }
+
+@media (max-width: 768px) {
+  .reservation-section {
+    .reservation-container {
+      padding: 30px 20px !important;
+    }
+  }
+
+  .contact-section {
+    .contact-info-card, 
+    .contact-form-card {
+      padding: 30px 20px !important;
+    }
+  }
+
+  .checkout-page {
+    .checkout-form,
+    .order-review {
+      padding: 30px 20px !important;
+    }
+  }
+}

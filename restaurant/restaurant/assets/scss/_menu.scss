@@ -35,6 +35,18 @@
       color: $secondary;
     }
   }
+
+  @media (max-width: 768px) {
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 0 15px;
+    margin: 25px 0;
+
+    button {
+      padding: 8px 18px;
+      font-size: 0.85rem;
+    }
+  }
 }
 
 .menu-grid {
