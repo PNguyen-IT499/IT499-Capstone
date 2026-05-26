@@ -44,23 +44,17 @@ If you have **Yarn** or **NPM** installed globally:
 
 ---
 
-### Option B: Single-Click Windows Tools (Zero Global Setup)
-If you are on Windows and do not want to install Node.js, Gulp, or Yarn globally, we have embedded a localized Node engine directly inside the repository for a zero-setup development and preview experience:
+### Option B: Single-Click Local Preview Server (Zero Global Setup)
+If you are on Windows and do not want to install Node.js, Gulp, or Yarn globally, we have embedded a localized Node engine directly inside the repository for a zero-setup local preview experience:
 
-* 🚀 **Option B1: Preview the Site Locally (`dev.bat`)**
-  1. Double-click the **`dev.bat`** file inside your workspace.
-  2. The script will automatically start a local private web server and open the website in your browser at:
-     👉 **`http://localhost:3000`**
-     *(Any edits you save in your source files will instantly compile and hot-reload in the browser!)*
-
-* 🛠️ **Option B2: Recompile the Site for Production (`build.bat`)**
-  1. Double-click the **`build.bat`** file inside your workspace.
-  2. The script will automatically compile, minify, and optimize all layouts, stylesheets, and scripts, saving them in the `public/` directory ready for final hosting!
+1. Double-click the **`dev.bat`** file inside your workspace.
+2. The script will automatically start a local private web server and open the website in your browser at:
+   👉 **`http://localhost:3000`**
+   *(Any edits you save in your source files will instantly compile and hot-reload in the browser!)*
 
 ---
 
 ## 📂 3. Repository Architecture & Directory Structure
-* `build.bat` - Zero-install local compilation script for Windows.
 * `dev.bat` - Zero-install local preview server script for Windows.
 * `restaurant/restaurant/` - Core project workspace.
   * `assets/` - Source development files:
