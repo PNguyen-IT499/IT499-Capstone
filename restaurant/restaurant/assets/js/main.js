@@ -1,3 +1,8 @@
+// Base path detection for subfolder hosting (e.g. GitHub Pages)
+const basePath = window.location.pathname.startsWith('/IT499-Capstone')
+	? '/IT499-Capstone'
+	: '';
+
 // Cart State
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
 window.currentFulfillment = 'delivery';
@@ -105,7 +110,7 @@ function setupEventListeners() {
 				' confirmed.'
 		);
 		localStorage.removeItem('cart');
-		window.location.href = '/order-confirmation';
+		window.location.href = basePath + '/order-confirmation';
 	});
 
 	// Reviews Slider Logic
@@ -177,20 +182,20 @@ function updateCartUI() {
 }
 
 const itemImages = {
-	'1': '/img/products/appetizer.png',
-	'2': '/img/products/main.png',
-	'3': '/img/products/dessert.png',
-	'4': '/img/products/drink.png',
-	'5': '/img/products/turbot_roti.png',
-	'6': '/img/products/elixir_or.png',
-	'7': '/img/products/caviar.png',
-	'8': '/img/products/foie_gras.png',
-	'9': '/img/products/duck.png',
-	'10': '/img/products/venison.png',
-	'11': '/img/products/mille_feuille.png',
-	'12': '/img/products/souffle.png',
-	'13': '/img/products/emerald_fizz.png',
-	'14': '/img/products/nectar_noir.png'
+	'1': basePath + '/img/products/appetizer.png',
+	'2': basePath + '/img/products/main.png',
+	'3': basePath + '/img/products/dessert.png',
+	'4': basePath + '/img/products/drink.png',
+	'5': basePath + '/img/products/turbot_roti.png',
+	'6': basePath + '/img/products/elixir_or.png',
+	'7': basePath + '/img/products/caviar.png',
+	'8': basePath + '/img/products/foie_gras.png',
+	'9': basePath + '/img/products/duck.png',
+	'10': basePath + '/img/products/venison.png',
+	'11': basePath + '/img/products/mille_feuille.png',
+	'12': basePath + '/img/products/souffle.png',
+	'13': basePath + '/img/products/emerald_fizz.png',
+	'14': basePath + '/img/products/nectar_noir.png'
 };
 
 function renderCart() {
@@ -201,7 +206,7 @@ function renderCart() {
 			<div class="empty-msg">
 				<i class="fas fa-shopping-bag"></i>
 				<p>Your culinary selections cart is currently empty.</p>
-				<a href="/menu" class="browse-btn">Browse our Menu</a>
+				<a href="${basePath}/menu" class="browse-btn">Browse our Menu</a>
 			</div>
 		`;
 		return;
@@ -213,7 +218,7 @@ function renderCart() {
 	cart.forEach(item => {
 		const total = item.price * item.quantity;
 		subtotal += total;
-		const imgSrc = itemImages[item.id] || '/img/products/main.png';
+		const imgSrc = itemImages[item.id] || basePath + '/img/products/main.png';
 		html += `
             <div class="cart-item">
                 <img src="${imgSrc}" alt="${item.name}" />
