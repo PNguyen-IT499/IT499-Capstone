@@ -1,6 +1,6 @@
 # Gourmet Haven | Michelin-Starred Fine Dining & Premium Delivery
 
-Welcome to the digital sanctuary of **Gourmet Haven**, a pixel-perfect, premium website built with modern web technologies, elegant dark glassmorphism styling, gold accents, and a fully interactive reservations, cart, and checkout system.
+Dear client, welcome to the digital sanctuary of **Gourmet Haven**, a pixel-perfect, premium website built with modern web technologies, elegant dark glassmorphism styling, gold accents, and a fully interactive reservations, cart, and checkout system.
 
 ---
 
