@@ -44,17 +44,24 @@ If you have **Yarn** or **NPM** installed globally:
 
 ---
 
-### Option B: Single-Click Windows Compiler (Zero Global Setup)
-If you are on Windows and do not want to install Node.js, Gulp, or Yarn globally, we have embedded a localized Node engine directly inside the repository for a zero-setup compilation experience:
+### Option B: Single-Click Windows Tools (Zero Global Setup)
+If you are on Windows and do not want to install Node.js, Gulp, or Yarn globally, we have embedded a localized Node engine directly inside the repository for a zero-setup development and preview experience:
 
-1. Navigate to the **root of the repository**.
-2. Double-click the **`build.bat`** file.
-3. The script will automatically trigger and compile your modular styles, pages, and scripts, saving all optimized files directly into the `public/` directory ready for deployment!
+* 🚀 **Option B1: Preview the Site Locally (`dev.bat`)**
+  1. Double-click the **`dev.bat`** file inside your workspace.
+  2. The script will automatically start a local private web server and open the website in your browser at:
+     👉 **`http://localhost:3000`**
+     *(Any edits you save in your source files will instantly compile and hot-reload in the browser!)*
+
+* 🛠️ **Option B2: Recompile the Site for Production (`build.bat`)**
+  1. Double-click the **`build.bat`** file inside your workspace.
+  2. The script will automatically compile, minify, and optimize all layouts, stylesheets, and scripts, saving them in the `public/` directory ready for final hosting!
 
 ---
 
 ## 📂 3. Repository Architecture & Directory Structure
 * `build.bat` - Zero-install local compilation script for Windows.
+* `dev.bat` - Zero-install local preview server script for Windows.
 * `restaurant/restaurant/` - Core project workspace.
   * `assets/` - Source development files:
     * `views/` - Pug templates (HTML structure, pages, layouts, and partials).
